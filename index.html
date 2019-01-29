@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Эхо—допплерография</title>
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style type="text/css" media="print">.no-print{ display: none; }</style>
+</head>
+<body>
+
+	<nav id="navigation" class="no-print">
+		<input class="button" type="button" name="" value="Составить заключение" id="resultButton">
+		<input class="button" type="button" name="" value="Назад" id="resultHideButton">
+		<input class="button" type="button" name="" value="Распечатать" id="resultPrintButton">
+	</nav>
+
+	
+	<!--	<nav class="no-print" id="sidenav">
+			<h4>Навигация</h4>
+			<ul>
+				<li><a href="#" class="sidenav-link">Личные данные пациента</a></li>
+				<li><a href="#" class="sidenav-link">Левое предсердие</a></li>
+				<li><a href="#" class="sidenav-link">Левый желудочек</a></li>
+				<li><a href="#" class="sidenav-link">Митральный клапан</a></li>
+				<li><a href="#" class="sidenav-link">Аортальный клапан</a></li>
+				<li><a href="#" class="sidenav-link">Правое предсердие</a></li>
+				<li><a href="#" class="sidenav-link">Правый желудочек</a></li>
+				<li><a href="#" class="sidenav-link">Легочной клапан</a></li>
+				<li><a href="#" class="sidenav-link">Легочная артерия</a></li>
+				<li><a href="#" class="sidenav-link">Трикуспидальный клапан</a></li>
+				<li><a href="#" class="sidenav-link">Межжелудочковая перегородка</a></li>
+				<li><a href="#" class="sidenav-link">Межпредсердная перегородка</a></li>
+				<li><a href="#" class="sidenav-link">Перикардиальный выпот</a></li>
+				<li><a href="#" class="sidenav-link">Снижение диастолитической функции методом допплерографии</a></li>
+				<li><a href="#" class="sidenav-link">Сегментарное нарушение сократимости стенок левого желудочка</a></li>
+			</ul>
+		</nav> -->
+
+		<div class="container" id="surveyView">	
+			
+			<section class="surveySection">
+				<h1>
+					Исследование
+				</h1>
+			</section>
+
+			<section id="personalData" class="surveySection">
+
+				<h2 class="surveySectionHeader">Личные данные пациента</h2>
+
+				<div class="row surveyRow">
+
+					<div class="col">
+						<label for="name">ФИО</label>
+						<input name="name" type="text" id="name" value="Константин Константинович Константинопольский">
+					</div>	
+
+					<div class="col">
+						<label for="age">Возраст</label>
+						<input name="age" type="number" id="age" value="40" class="numeric-input">
+					</div>
+
+					<div class="col">
+						<label for="gender">Пол</label>
+							<div class="row">
+								<label class="radioHorizontal">
+									
+										<input type="radio" name="gender" value="Мужской" checked="true">
+										<span>Мужской</span>
+									
+								</label>
+								<label class="radioHorizontal">
+									
+										<input type="radio" name="gender" value="Женский">
+										<span>Женский</span>
+									
+								</label>
+							</div>	
+					</div>
+
+					<div class="col">
+						<label for="height">Рост, см</label>
+						<input name="height" type="number" id="height" value="175" class="numeric-input">
+					</div>
+
+					<div class="col">
+						<label for="weight">Вес, кг</label>
+						<input name="weight" type="number" id="weight" value="75" class="numeric-input">
+					</div>
+
+				</div>
+
+				<div class="row surveyRow">
+					<div class="col">
+						<label for="diagnosis">Диагноз при направлении</label>
+						<textarea name="diagnosis" id="diagnosis">Здоров как бык.</textarea>
+					</div>
+					
+				</div>
+			</section>
+
+			<section id="leftAtrium" class="surveySection">
+
+				<h2 class="surveySectionHeader">Левое предсердие</h2>
+
+				<div class="row surveyRow">
+
+					<div class="col">
+						<label for="leftAuricle">Передне-задний размер, мм</label>
+						<input name="leftAuricle" type="number" id="leftAuricle" value="45" class="numeric-input">
+					</div>
+					
+					<div class="col">
+						<label for="KSO">КСО, мл</label>
+				 		<input name="KSO" type="number" id="KSO" value="30" class="numeric-input">
+				 	</div>
+
+					<div class="col">
+						<label for="KSR">КСР, мм</label>
+						<input name="KSR" type="number" id="KSR" value="40" class="numeric-input">
+					</div>
+
+					<div class="col">
+						<label for="KDR">КДР, мм</label>
+						<input name="KDR" type="number" id="KDR" value="50" class="numeric-input">
+					</div>
+
+				</div>
+			</section>
+
+			<section id="leftVentricle" class="surveySection">
+				<h2 class="surveySectionHeader">Левый желудочек</h2>
+
+				<div class="row surveyRow">
+
+						<label class="row-title" for="leftVentricleVolume">Объем в диастолу&nbsp;</label>
+						<input type="number" name="leftVentricleVolume" id="leftVentricleVolume" value="160" class="numeric-input">
+						<span>&nbsp;мл</span>
+
+				</div>	
+
+				<div class="row surveyRow">
+					
+						<label class="row-title" for="SimpsonEF">ФВ по Симпсону</label>
+						<input type="number" name="SimpsonEF" id="SimpsonEF" value="55" class="numeric-input">
+						<span>&nbsp;%</span>
+					
+				</div>
+
+				<div class="row surveyRow">		
+					<label class="row-title" for="heartSeptumThickness">Толщина МЖП</label>
+					<input type="number" name="heartSeptumThickness" id="heartSeptumThickness" value="12" class="numeric-input">
+					<span>&nbsp;мм</span>
+				</div>
+
+				<div class="row surveyRow">
+					<label class="row-title" for="leftAuricleWallThickness">Толщина ЗСЛЖ</label>
+					<input type="number" name="leftAuricleWallThickness" id="leftAuricleWallThickness" value="11" class="numeric-input">
+					<span>&nbsp;мм</span>
+				</div>
+
+				<div class="row surveyRow">
+					<p class="row-title">Тип гипертрофии</p>
+					
+						<label class="radioHorizontal">
+							<div>
+								<input type="radio" name="hypertrophia" id="symmetricHypertrophia" value="Симметрическая гипертрофия">
+								<span>Симметрическая</span>
+							</div>		
+						</label>
+
+						<label class="radioHorizontal">
+							<div>
+								<input type="radio" name="hypertrophia" id="asymmetricHypertrophia" value="Ассиметрическая гипертрофия">
+								<span>Ассиметрическая</span>
+							</div>
+						</label>
+					
+				</div>
+
+				<div class="row surveyRow" id="asymmetricHypertrophiaTypeView" style="display: none;">
+					<p class="row-title">Подтип ассиметрической гипертрофии</p>
+					
+						<label class="radioHorizontal">
+							<input type="radio" name="asymmetricHypertrophiaType" value="Типичная">
+							<span>Типичная</span>
+						</label>
+
+						<label class="radioHorizontal">
+							<input type="radio" name="asymmetricHypertrophiaType" value="Обструкция выходного отдела ЛЖ">
+							<span>Обструкция выходного отдела ЛЖ</span>
+						</label>
+
+						<label class="radioHorizontal">
+							<input type="radio" name="asymmetricHypertrophiaType" value="Верхушечная гипертрофия">
+							<span>Верхушечная гипертрофия</span>
+						</label>
+					
+				</div>
+
+				<div class="row surveyRow">
+					<p class="row-title">Градиент в выходном тракте, мм рт. ст.</p>
+					<input type="number" name="" id="leftVentricleOutputGradient" value="20" class="numeric-input">	
+				</div>
+				
+				<div class="surveyRow">
+					<div class="col">
+						<label for="leftVentricleComment">Комментарий</label>
+						<textarea name="leftVentricleComment" id="leftVentricleComment">Комментарий к исследованию левого желудочка</textarea>	
+					</div>
+				</div>
+
+				<div class="surveyRow">
+					<label>
+						<input type="checkbox" id='leftVentricleCommentAddPhrase'>
+						<span>Добавить фразу «Межжелудочковая перегородка имеет сигмовидную форму; для пожилого возраста это вариант нормы»</span>
+					</label>
+				</div>
+			</section>
+			
+			<section id="mitralValve" class="surveySection">
+				<h2 class="surveySectionHeader">Митральный клапан</h2>
+					<div class="surveyRow">
+						<p>Степень регургитации на МК</p>
+						<div class="row">
+							<label class="radioHorizontal"><input type="radio" name="mitralValveRegurgitation" value="не определяется">Не определяется</label></li>
+							<label class="radioHorizontal"><input type="radio" name="mitralValveRegurgitation" value="физиологическая">Физиологическая</label></li>
+							<label class="radioHorizontal"><input type="radio" name="mitralValveRegurgitation" value="минимальная (I степень)">Минимальная (I степень)</label>
+							<label class="radioHorizontal"><input type="radio" name="mitralValveRegurgitation" value="небольшая (II степень)">Небольшая (II степень)</label>
+							<label class="radioHorizontal"><input type="radio" name="mitralValveRegurgitation" value="небольшая-умеренная (II-III степень)">Небольшая-умеренная (II-III степень)</label>
+							<label class="radioHorizontal"><input type="radio" name="mitralValveRegurgitation" value="умеренная (III степень)">Умеренная (III степень)</label>
+							<label class="radioHorizontal"><input type="radio" name="mitralValveRegurgitation" value="выраженная (IV степень)">Выраженная (IV степень)</label>
+						</div>
+					</div>
+						
+				<div class="row surveyRow">
+					<div class="col">
+						<p>Регургитация относительная?</p>
+						<div class="row">
+							<label class="radioHorizontal"><input type="radio" name="mitralValveRegurgitationIsRelative" value="Регургитация относительная">Да</label>
+							<label class="radioHorizontal"><input type="radio" name="mitralValveRegurgitationIsRelative" value="Регургитация не относительная">Нет</label>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section id="aorticValve" class="surveySection">
+				<h2 class="surveySectionHeader">Аортальный клапан</h2>
+
+				<div class="surveyRow">
+					<p>Степень регургитации на аортальном клапане</p>
+						<div class="row">
+							<label class="radioHorizontal"><input type="radio" name="aorticValveRegurgitation" value="Не определяется">Не определяется</label>
+							<label class="radioHorizontal"><input type="radio" name="aorticValveRegurgitation" value="Минимальная">Минимальная</label>
+							<label class="radioHorizontal"><input type="radio" name="aorticValveRegurgitation" value="Небольшая (II степень)">Небольшая (II степень)</label>
+							<label class="radioHorizontal"><input type="radio" name="aorticValveRegurgitation" value="Небольшая-умеренная (II степень)">Небольшая-умеренная (II степень)</label>
+							<label class="radioHorizontal"><input type="radio" name="aorticValveRegurgitation" value="Умеренная (III степень)">Умеренная (III степень)</label>
+							<label class="radioHorizontal"><input type="radio" name="aorticValveRegurgitation" value="Выраженная (IV степень)">Выраженная (IV степень)</label>
+						</div>
+				</div>
+
+				<div class="surveyRow">
+					<p>Регургитация относительная?</p>
+						<div class="row">
+							<label class="radioHorizontal"><input type="radio" name="aorticValveRegurgitationIsRelative" value="Регургитация относительная">Да</label>
+							<label class="radioHorizontal"><input type="radio" name="aorticValveRegurgitationIsRelative" value="Регургитация не относительная">Нет</label>
+						</div>
+					
+				</div>
+
+				<div class="row surveyRow">
+					<p class="row-title">Фиброзное кольцо, мм</p>
+					<input type="number" id="aorticValveFibrousRing" value="20" class="numeric-input">	
+				</div>
+
+				<div class="row surveyRow">
+					<p class="row-title">Основание аорты на уровне синусов Вальсавы, мм</p>
+					<input type="number" id="aorticBase" value="20" class="numeric-input">	
+				</div>
+
+				<div class="row surveyRow">
+					<p class="row-title">Восходящая аорта, мм</p>
+					<input type="number" id="ascendingAorta" value="20" class="numeric-input">
+				</div>
+
+				<div>
+					<p class="row-title">Стенки аорты</p>
+						<div class="row">
+							<label class="radioHorizontal"><input type="radio" name="aorticWalls" value="Обычные">Обычные</label>
+							<label class="radioHorizontal"><input type="radio" name="aorticWalls" value="Уплотнены">Уплотнены</label>
+							<label class="radioHorizontal"><input type="radio" name="aorticWalls" value="Гиперэхогенные">Гиперэхогенные</label>
+						</div>
+				</div>
+			</section>
+			
+			<section id="rightAtrium" class="surveySection">
+				<h2>Правое предсердие</h2>
+				<div class="row surveyRow">
+					<div class="col">
+						<p>Увеличено ли правое предсердие?</p>
+						<div class="row">
+							<label class="radioHorizontal">
+								<input type="radio" name="rightAtriumEnlargement" value="Не увеличено"><span>Не увеличено</span>
+							</label>
+							<label class="radioHorizontal">
+								<input type="radio" name="rightAtriumEnlargement" value="Увеличено"><span>Увеличено</span>
+							</label>
+							<label class="radioHorizontal">
+								<input type="radio" name="rightAtriumEnlargement" value="Значительно увеличено"><span>Значительно увеличено</span>
+							</label>
+						</div>	
+					</div>
+				</div>
+				<div>
+					<p>Продольный размер, мл</p>
+					<input type="number" id="rightAtriumLongitudinalSize" value="20">
+				</div>
+				<div>
+					<p>Поперечный размер, мм</p>
+					<input type="number" id="rightAtriumTransverseSize" value="20">
+				</div>
+				<div>
+					<p>Объем, мл</p>
+					<input type="number" id="rightAtriumVolume" value="20">
+				</div>
+			</section>
+			
+			<section id="rightVentricle" class="surveySection">
+				<h2 class="surveySectionHeader">Правый желудочек</h2>
+				<p>Размеры</p>
+
+				<div class="row surveyRow">
+					<div class="col col-336">
+						<p>В парастернальном сечении, мм</p>
+					</div>
+					
+					<input type="number" id="rightVentricleParasternalSize" value="20" class="numeric-input">
+				</div>
+
+				<div class="row surveyRow">
+					<div class="col col-336">
+						<p>В апикальной позиции на базальном уровне, мм</p>
+					</div>
+					
+					<input type="number" id="rightVentricleApicalBasalSize" value="20" class="numeric-input">
+				</div>
+
+				<div class="row surveyRow">
+					<div class="col col-336">
+						<p>В апикальной позиции на срединном уровне, мм</p>
+					</div>
+					<input type="number" id="rightVentricleApicalMedianSize" value="20" class="numeric-input">
+				</div>
+
+				<div class="row surveyRow">
+					<div class="col col-336">
+						<p>Продольный размер в апикальной позиции, мм</p>
+					</div>
+					<input type="number" id="rightVentricleApicalLongitudinalSize" value="20" class="numeric-input">
+				</div>
+
+				<div class="row surveyRow">
+					<div class="col col-336">
+						<p>Конечно-диастолический объем, мл</p>
+					</div>
+					
+					<input type="number" id="rightVentricleEndDiastolicVolume" value="20" class="numeric-input">
+				</div>
+
+				<div class="row surveyRow">
+					<div class="col col-336">
+						<p>Толщина стенки, мм</p>
+					</div>
+					<input type="number" id="rightVentricleWallThickness" value="20" class="numeric-input">
+				</div>
+			</section>
+
+			<section id="pulmonaryValve" class="surveySection">
+				<h2 class="surveySectionHeader">Легочной клапан</h2>
+
+				<div class="row surveyRow">
+					<div class="col">
+						<p>Состояние легочного клапана:</p>
+						<div class="row">
+							<label class="radioHorizontal"><input type="radio" name="pulmonaryValveState" value="Изменен">Изменен</label>
+							<label class="radioHorizontal"><input type="radio" name="pulmonaryValveState" value="Не изменен">Не изменен</label>
+						</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<p>Комментарий</p>
+					<textarea id="pulmonaryValveComment" style="width: 400px; height: 300px;">Комментарий к легочному клапану</textarea>
+				</div>
+			</section>
+			
+			<section id="pulmonaryArtery" class="surveySection">
+				<h2>Легочная артерия</h2>
+				<div>
+					<p>Состояние легочной артерии:</p>
+					<ul>
+						<li><label><input type="radio" name="pulmonaryArteryState" value="Не расширена (до 28 мм — норма)">Не расширена (до 28 мм — норма)</label></li>
+						<li><label><input type="radio" name="pulmonaryArteryState" value="Расширена">Расширена</label></li>
+						<li><label><input type="radio" name="pulmonaryArteryState" value="Значительно расширена">Значительно расширена</label></li>
+					</ul>
+				</div>
+			</section>
+			
+			<section id="tricuspidValve" class="surveySection">
+				<h2>Трикуспидальный клапан</h2>
+				<div>
+					<p>Степень регургитации на ТК:</p>
+					<ul>
+						<li><label><input type="radio" name="tricuspidValveRegurgitation" value="Не определяется">Не определяется</label></li>
+						<li><label><input type="radio" name="tricuspidValveRegurgitation" value="Физиологическая">Физиологическая</label></li>
+						<li><label><input type="radio" name="tricuspidValveRegurgitation" value="Минимальная (I степень)">Минимальная (I степень)</label></li>
+						<li><label><input type="radio" name="tricuspidValveRegurgitation" value="Небольшая (II степень)">Небольшая (II степень)</label></li>
+						<li><label><input type="radio" name="tricuspidValveRegurgitation" value="Небольшая-умеренная (II-III степень)">Небольшая-умеренная (II-III степень)</label></li>
+						<li><label><input type="radio" name="tricuspidValveRegurgitation" value="Умеренная (III степень)">Умеренная (III степень)</label></li>
+						<li><label><input type="radio" name="tricuspidValveRegurgitation" value="Выраженная (IV степень)">Выраженная (IV степень)</label></li>
+					</ul>
+				</div>
+				<div>
+					<p>Регургитация относительная?</p>
+					<ul>
+						<li><label><input type="radio" name="tricuspidValveRegurgitationIsRelative" value="Регургитация относительная">Да</label></li>
+						<li><label><input type="radio" name="tricuspidValveRegurgitationIsRelative" value="Регургитация не относительная">Нет</label></li>
+					</ul>
+				</div>
+				<div>
+					<p>Градиент регургитации, мм рт ст</p>
+					<input type="number" id="tricuspidValveRegurgitationGradient" value="20">
+				</div>
+				<div>
+					<p>Нижняя полая вена:</p>
+					<ul>
+						<li><label><input type="radio" name="inferiorVenaCava">Менее 15 мм, колабирует на вдохе</label></li>
+						<li><label><input type="radio" name="inferiorVenaCava">15-21 мм, коллабирует на вдохе более чем на 50%</label></li>
+						<li><label><input type="radio" name="inferiorVenaCava">15-21 мм, коллабирует на вдохе менее чем на 50%</label></li>
+						<li><label><input type="radio" name="inferiorVenaCava">Более 21 мм, коллабирует на вдохе менее чем на 50%</label></li>
+					</ul>
+				</div>
+				<div>
+					<p>Давление в правом предсердии:</p>
+					<ul>
+						<li><label><input type="radio" name="rightAtriumPressure" value="3">3 мм рт ст</label></li>
+						<li><label><input type="radio" name="rightAtriumPressure" value="5">5 мм рт ст</label></li>
+						<li><label><input type="radio" name="rightAtriumPressure" value="7">7 мм рт ст</label></li>
+						<li><label><input type="radio" name="rightAtriumPressure" value="12.5">10-15 мм рт ст</label></li>
+						<li><label><input type="radio" name="rightAtriumPressure" value="17.5">15-20 мм рт ст</label></li>
+					</ul>
+				</div>
+			</section>
+
+			<section id="interventricularSeptum" class="surveySection">
+				<h2>Межжелудочковая перегородка</h2>
+				<div>
+					<p>Состояние</p>
+					
+						<label><input type="radio" name="interventricularSeptumState" value="Без четкого сброса">Без четкого сброса</label></li>
+						<label><input type="radio" name="interventricularSeptumState" value="Дефект">Дефект</label></li>
+					
+				</div>
+
+				<div class="row surveyRow">
+					<div class="col">
+						<p>Тип дефекта</p>
+							<div class="row">
+								<label class="radioHorizontal"><input type="radio" name="interventricularSeptumDefect" value="Мембранозный">Мембранозный</label>
+								<label class="radioHorizontal"><input type="radio" name="interventricularSeptumDefect" value="Мышечный">Мышечный</label>
+							</div>
+					</div>
+				</div>
+
+				<div>
+					<p>Градиент сброса, мм рт ст:</p>
+					<input type="number" name="interventricularSeptumOutflowGradient" value="20">
+				</div>
+			</section>
+
+			<section id="interatrialSeptum" class="surveySection">
+				<h2>Межпредсердная перегородка</h2>
+				<div>
+					<p>Состояние</p>
+					<ul>
+						<li><label><input type="radio" name="interatrialSeptumState">Без четкого сброса</label></li>
+						<li><label><input type="radio" name="interatrialSeptumState">Дефект</label></li>
+					</ul>
+				</div>
+				<div>
+					<p>Тип дефекта:</p>
+					<ul>
+						<li><label><input type="radio" name="interatrialSeptumDefect">Открытое овальное окно</label></li>
+						<li><label><input type="radio" name="interatrialSeptumDefect">Дефект средней трети (вторичный дефект межпредсердной перегородки)</label></li>
+						<li><label><input type="radio" name="interatrialSeptumDefect">Высокий</label></li>
+						<li><label><input type="radio" name="interatrialSeptumDefect">Низкий (первичный дефект межпредсердной перегородки)</label></li>
+					</ul>
+				</div>
+				<div>
+					<p>Градиент сброса, мм рт ст:</p>
+					<input type="number" id="interatrialSeptumOutflowGradient" value="20">
+				</div>
+			</section>
+
+			<section id="pericardialEffusion" class="surveySection">
+				<h2 class="surveySectionHeader">Перикардиальный выпот</h2>
+				<div>
+					<p>Перикардиальный выпот за задней стенкой в диастолу, мм</p>
+					<input type="number" id="pericardialEffusionValue" value="20" class="numeric-input">
+				</div>
+			</section>
+
+			<section id="additionalFeatures" class="surveySection">
+				<h2 class="surveySectionHeader">Дополнительные особенности ЭХОКГ</h2>
+				<h3 class="surveySectionHeader">Снижение диастолической функции методом допплерографии</h3>
+
+				<div class="row surveyRow">
+
+					<div class="col">
+						<label for="earlyDiastolicFillingVelocity">Е, м/с</label>
+						<input name="earlyDiastolicFillingVelocity" type="number" id="earlyDiastolicFillingVelocity" value="20" class="numeric-input">
+					</div>
+
+					<div class="col">
+						<label for="lateDiastolicFillingVelocity">A, м/с</label>
+						<input name="lateDiastolicFillingVelocity" type="number" id="lateDiastolicFillingVelocity" value="20" class="numeric-input">
+					</div>
+
+					<div class="col">
+						<label for="decelerationTime">DT, мс</label>
+						<input type="number" id="decelerationTime" value="20" class="numeric-input">	
+					</div>
+
+					<div class="col">
+						<label for="earlyDiastolicMovementVelocity">e</label>
+						<input type="number" id="earlyDiastolicMovementVelocity" value="20" class="numeric-input">	
+					</div>
+
+				</div>
+	
+	
+
+				<h3 class="surveySectionHeader">Сегментарное нарушение сократимости стенок левого желудочка </h3>
+				
+				
+				<div class="row surveyRow">
+					<div class="col">
+						<p>Выявлено ли нарушение сократимости?</p>
+						<div class="row">
+							<label class="radioHorizontal"><input type="radio" name="segmentalViolationContraction" value="Выявлено">Выявлено</label>
+							<label class="radioHorizontal"><input type="radio" name="segmentalViolationContraction" value="Не выявлено">Не выявлено</label>
+						</div>
+					</div>
+				</div>
+				
+				<p><b>Описание нарушения</b></p>
+				<div style="display: flex; flex-direction: row;" class="segViolationAddContainer row surveyRow">
+					
+					<div id="segmentalViolationContractionType">
+						<p>Тип</p>
+						<ul>
+							<li><label><input type="radio" name="segmentalViolationContractionType" value="Гипокинез">Гипокинез</label></li>
+							<li><label><input type="radio" name="segmentalViolationContractionType" value="Акинез">Акинез</label></li>
+							<li><label><input type="radio" name="segmentalViolationContractionType" value="Дискинез">Дискинез</label></li>
+						</ul>
+					</div>
+
+		
+				<div id="segmentalViolationContractionWall">
+						<p>Стенка</p>
+						<ul>
+							<li><label><input type="checkbox" name="segmentalViolationContractionWall" value="передне-перегородочной">Передне-перегородочная</label></li>
+							<li><label><input type="checkbox" name="segmentalViolationContractionWall" value="передней">Передняя</label></li>
+							<li><label><input type="checkbox" name="segmentalViolationContractionWall" value="боковой">Боковая</label></li>
+							<li><label><input type="checkbox" name="segmentalViolationContractionWall" value="задней">Задняя</label></li>
+							<li><label><input type="checkbox" name="segmentalViolationContractionWall" value="нижней">Нижняя</label></li>
+							<li><label><input type="checkbox" name="segmentalViolationContractionWall" value="нижне-перегородочной">Нижне-перегородочная</label></li>
+							<li><label><input type="checkbox" name="segmentalViolationContractionWall" value="верхушки">Верхушка</label></li>
+						</ul>
+				</div>
+
+				<div id="segmentalViolationContractionDivision">
+						<p>Отдел</p>
+						<ul>
+							<li><label><input type="checkbox" name="segViolationDivision" value="базальном">Базальный</label></li>
+							<li><label><input type="checkbox" name="segViolationDivision" value="среднем">Средний</label></li>
+							<li><label><input type="checkbox" name="segViolationDivision" value="верхушечном">Верхушечный</label></li>
+						</ul>
+				</div>
+					<input type="button" value="Добавить" id="segViolationAddButton">
+				</div>
+
+				<div id="segViolationDescr">
+						<p><b>Выявленные нарушения:</b></p>
+						<ul id="segViolationList"></ul>
+				</div>
+
+				<div class="row surveyRow">
+					<div class="col">
+						<p>Дополнительные хорды в левом желудочке</p>	
+						<div class="row">			
+							<label class="radioHorizontal"><input type="radio" name="additionalChords" value="Выявлены">Выявлены</label>
+							<label class="radioHorizontal"><input type="radio" name="additionalChords" value="Не выявлены">Не выявлены</label>
+						</div>	
+					</div>
+					
+				</div>
+
+				<div class="row surveyRow">
+					<div class="col">
+						<label for="additionalFeaturesComment">Комментарий</label>
+						<textarea name="additionalFeaturesComment" id="" cols="30" rows="10"></textarea>
+					</div>
+				</div>
+			</section>
+
+		</div>
+
+		<div class="container" id="resultView" style="display: none;">
+			<div id="printable" class="print-header">
+				
+				<div id="printable-hidden">
+					
+					<p>Клинико-диагностический центр, г. Рубцовск <br>
+						Дата исследования <span>02.06.2018</span><br>
+						Отделение функциональной диагностики <br>
+
+
+					</p>
+					
+				</div>
+				<h1>Результаты эходопплерографического исследования</h1>
+				<section id="personal_data_result">
+					<h2>Личные данные пациента</h2>
+
+					<table style="width: 100%">
+						<tr>
+							<th>Пациент</th>
+							<th>Возраст</th>
+							<th>Пол</th>
+							<th>Рост, <i>см</i></th>
+							<th>Вес, <i>кг</i></th>
+							<th>S<sub>тела</sub>, м<sup>2</sup></th>
+						</tr>
+						<tr>
+							<td id="nameResult"></td>
+							<td id="ageResult"></td>
+							<td id="genderResult"></td>
+							<td id="heightResult"></td>
+							<td id="weightResult"></td>
+							<td id="surfaceAreaResult"></td>
+						</tr>
+					</table>
+					
+					<!--	
+					<div>
+						<p>Пациент</p>
+						<p></p>
+					</div>
+					<hr>
+					<div>
+						<p>Возраст</p>
+						<p></p>
+					</div>
+					<hr>
+					<div>
+						<p>Пол</p>
+						<p></p>
+					</div>
+					<hr>
+					<div>
+						<p>Рост, см</p>
+						<p></p>
+					</div>
+					<hr>
+					<div>
+						<p>Вес, кг</p>
+						<p></p>
+					</div>
+					<hr>
+					<div>
+						<p>Площадь поверхности тела, м<sup>2</sup></p>
+						<p></p>
+					</div>
+					<hr> 
+					-->
+
+					<div>
+						<h4>Диагноз при направлении</h4>
+						<p id="diagnosisResult"></p>
+					</div> 
+
+				</section>
+
+				<section id="left_atrium_result">
+					<h2>Левое предсердие</h2>
+
+					<table style="width: 100%;">
+						<tr>
+							<th>Передне-задний размер, <i>мм</i></th>
+							<th>Индекс размера, <i>мм/м<sup>2</sup></i></th>
+							<th>КСО, <i>мл</i></th>
+							<th>КДР, <i>мм</i></th>
+							<th>КСР, <i>мм</i></th>
+							<th>Индекс КСО, <i>мл/м<sup>2</sup></i></th>
+							<th>Индекс КДР, <i>мл/м<sup>2</sup></i></th>
+						</tr>
+						<tr>
+							<td id="leftAuricleResult"></td>
+							<td id="leftAuricleIndexResult"></td>
+							<td id="resultKSO"></td>
+							<td id="resultKDR"></td>
+							<td id="resultKSR"></td>
+							<td id="resultIndexKSO"></td>
+							<td id="resultIndexKDR"></td>
+						</tr>
+					</table>
+					<!--
+					<div>
+						<p>Передне-задний размер ЛП, мм</p>
+						<p></p>
+					</div>
+					<hr>
+					<div>
+						<p>Индекс ЛП мм/м<sup>2</sup></p>
+						<p></p>
+					</div>
+					<hr>
+					<div>
+						<p>КСО, мл</p>
+						<p></p>
+					</div>
+					<hr>
+					<div>
+						<p>КДР, мм</p>
+						<p></p>
+					</div>
+					<hr>
+					<div>
+						<p>КСР, мм</p>
+						<p></p>
+					</div>
+					<hr>
+					<div>
+						<p>Индекс КСО, мл/м<sup>2</sup></p>
+						<p></p>
+					</div>
+					<hr>
+					<div>
+						<p>Индекс КДР, мм/м<sup>2</sup></p>
+						<p></p>
+					</div>
+					<hr> -->
+				</section>
+
+				<section id="left_ventricle_result">
+					<h2>Левый желудочек</h2>
+					<div>
+						<p>Объем в диастолу, мл</p>
+						<p id="resultLeftVentricleVolume"></p>
+					</div>
+					<hr>
+					<div>
+						<p>Индекс объема в диастолу, мм/м<sup>2</sup></p>
+						<p id="resultLeftVentricleVolumeIndex"></p>
+					</div>
+					<hr>
+					<div>
+						<p>ФВ по Тейхольцу, %</p>
+						<p id="resultTeichholzEF"></p>
+					</div>
+					<hr>
+					<div>
+						<p>ФВ по Cимпсону, %</p>
+						<p id="resultSimpsonEF"></p>
+					</div>
+					<hr>
+					<div>
+						<p>Толщина МЖП, мм</p>
+						<p id="resultHeartSeptumThickness"></p>
+					</div>
+					<hr>
+					<div>
+						<p>Толщина ЗСЛЖ, мм</p>
+						<p id="resultLeftAuricleWallThickness"></p>
+					</div>
+					<hr>
+					<div>
+						<p>ОТС</p>
+						<p id="resultRWT"></p>
+					</div>
+					<hr>
+					<div>
+						<p>Масса миокрада, г</p>
+						<p id="resultMyocardiumMass"></p>
+					</div>
+					<hr>
+					<div>
+						<p>Индекс массы миокрада, г/м<sup>2</sup></p>
+						<p id="resultMyocardiumMassIndex"></p>
+					</div>
+					<hr>
+					<div>
+						<p>Тип гипертрофии</p>
+						<p id="resultHypertrophia"></p>
+					</div>
+					<hr>
+					<div id="resultAsymmetricHypertrophiaTypeView" style="display: none;">
+						<p>Подтип ассиметрической гипертрофии</p>
+						<p id="resultAsymmetricHypertrophiaType"></p>
+					</div>
+					<hr>
+					<div>
+						<p>Градиент в выходном тракте, мм рт. ст.</p>
+						<p id="resultLeftVentricleOutputGradient"></p>
+					</div>
+					<hr>
+					<div>
+						<p>Комментарий</p>
+						<p id="resultLeftVentricleComment"></p>
+					</div>
+				</section>
+
+				<section id="mitral_valve_result">
+					<h2>Митральный клапан</h2>
+					<div>
+						<p>Степень регургитации</p>
+						<p id="resultMitralValveRegurgitation"></p>
+					</div>
+					<div>
+						<hr>
+						<p id="resultMitralValveRegurgitationIsRelative">Относительность регургитации не указана</p>
+					</div>
+				</section>
+
+				<section id="aortic_valve_result">
+					<h2>Аортальный клапан</h2>
+					<div>
+						<hr>
+						<p>Степень регургитации</p>
+						<p id="resultAorticValveRegurgitation">Не указана</p>
+					</div>
+					<div>
+						<hr>
+						<p id="resultAorticValveRegurgitationIsRelative">Регургитация (не) относительная</p>
+					</div>
+					<div>
+						<hr>
+						<p>Фиброзное кольцо, мм</p>
+						<p id="resultAorticValveFibrousRing">Не указано</p>
+					</div>
+					<div>
+						<hr>
+						<p>Основание аорты на уровне синусов Вальсавы, мм</p>
+						<p id="resultAorticBase">Не указано</p>
+					</div>
+					<div>
+						<hr>
+						<p>Отношение величины основания аорты на уровне синусов Вальсавы к площади поверхности тела, мм/м<sup>2</sup></p>
+					</div>
+					<div>
+						<hr>
+						<p>Восходящая аорта, мм</p>
+						<p id="resultAscendingAorta">Не указано</p>
+					</div>
+					<div>
+						<hr><p>Отношение величины восходящей аорты к ППТ</p>
+					</div>
+					<div>
+						<hr>
+						<p>Стенки аорты</p>
+						<p id="resultAorticWalls">Не указано</p>
+					</div>
+				</section>
+
+				<section id="right_atrium_result">
+					<h2>Правое предсердие</h2>
+					<div>
+						<hr>
+						<p>Степень увеличения правого предсердия</p>
+						<p id="resultRightAtriumEnlargement"></p>
+					</div>
+					<div>
+						<hr>
+						<p id="resultRightAtriumLongitudinalSize">Продольный размер, мм</p>
+					</div>
+					<div>
+						<hr>
+						<p id="resultRightAtriumLongitudinalSizeIndex">Индекс продольного размера, мм/м<sup>2</sup></p>
+					</div>
+					<div>
+						<hr>
+						<p id="resultRightAtriumTransverseSize">Поперечный размер, мм</p>
+					</div>
+					<div>
+						<hr>
+						<p id="resultRightAtriumTransverseSizeIndex">Индекс поперечного размера, мм/м<sup>2</sup></p>
+					</div>
+					<div>
+						<hr>
+						<p id="resultRightAtriumVolume">Объем, мл</p>
+					</div>
+					<div>
+						<hr>
+						<p id="resultRightAtriumVolumeIndex">Индекс объема, мл/м<sup>2</sup></p>
+					</div>
+				</section>
+
+				<section id="right_ventricle_result">
+					<h2>Правый желудочек</h2>
+					<div>
+						<hr>
+						<p id="resultRightVentricleParasternalSize">Размер в парастернальном сечении, мм</p>
+					</div>
+					<div>
+						<hr>
+						<p id="resultRightVentricleApicalBasalSize">Размер в апикальной позиции на базальном уровне, мм</p>
+					</div>
+					<div>
+						<hr>
+						<p id="resultRightVentricleApicalMedianSize">Размер в апикальной позиции на срединном уровне, мм</p>
+					</div>
+					<div>
+						<hr>
+						<p id="resultRightVentricleApicalLongitudinalSize">Продольный размер в апикальной позиции, мм</p>
+					</div>
+					<div>
+						<hr>
+						<p id="resultRightVentricleEndDiastolicVolume">Конечно-диастолический объем правого желудочка, мл</p>
+					</div>
+					<div>
+						<hr>
+						<p id="resultRightVentricleEndDiastolicVolumeIndex">Индекс конечно-диастолического объема ПЖ, мл/м<sup>2</sup></p>
+					</div>
+					<div>
+						<hr>
+						<p id="resultRightVentricleWallThickness">Толщина стенки ПЖ, мм</p>
+					</div>
+				</section>
+
+				<section id="pulmonary_valve_result">
+					<h2>Легочной клапан</h2>
+					<div>
+						<hr>
+						<p>Состояние легочного клапана</p>
+						<p id="resultPulmonaryValveState"></p>
+					</div>
+					<div>
+						<hr>
+						<p>Комментарий</p>
+						<p id="resultPulmonaryValveComment"></p>
+					</div>
+				</section>
+
+				<section id="pulmonary_artery_result">
+					<h2>Легочная артерия</h2>
+					<div>
+						<hr>
+						<p>Состояние легочной артерии</p>
+						<p id="resultPulmonaryArteryState"></p>
+					</div>
+				</section>
+
+				<section id="tricuspid_valve_result">
+					<h2>Трикуспидальный клапан</h2>
+					<div>
+						<hr>
+						<p>Степень регургитации на ТК</p>
+						<p id="resultTricuspidValveRegurgitation"></p>
+					</div>
+					<div>
+						<hr>
+						<p>Относительность регургитации</p>
+						<p id="resultTricuspidValveRegurgitationIsRelative"></p>
+					</div>
+					<div>
+						<hr>
+						<p>Градиент регургитации, мм рт ст</p>
+						<p id="resultTricuspidValveRegurgitationGradient"></p>
+					</div>
+					<div>
+						<hr>
+						<p>Нижняя полая вена</p>
+						<p id="resultInferiorVenaCava"></p>
+					</div>
+					<div>
+						<hr>
+						<p>Давление в правом предсердии</p>
+						<p id="resultRightAtriumPressure"></p>
+					</div>
+					<div>
+						<hr>
+						<p>Систолическое давление в правом желудочке</p>
+						<p id="resultRightVentricleSystolicPressure"></p>
+					</div>
+				</section>
+
+				<section id="interventricular_septum_result">
+					<h2>Межжелудочковая перегородка</h2>
+					<div>
+						<hr>
+						<p>Состояние</p>
+						<p id="resultInterventricularSeptumState"></p>
+					</div>
+					<div>
+						<hr>
+						<p>Дефект</p>
+						<p id="resultInterventricularSeptumDefect"></p>
+					</div>
+					<div>
+						<hr>
+						<p>Градиент сброса, мм рт ст</p>
+						<p id="resultInterventricularSeptumOutflowGradient"></p>
+					</div>
+				</section>
+
+				<section id="interatrial_septum_result">
+					<h2>Межпредсердная перегородка</h2>
+					<div>
+						<hr>
+						<p>Состояние</p>
+						<p id="resultInteratrialSeptumState"></p>
+					</div>
+					<div>
+						<hr>
+						<p>Тип дефекта</p>
+						<p id="resultInteratrialSeptumDefect"></p>
+					</div>
+					<div>
+						<hr>
+						<p>Градиент сброса, мм рт ст</p>
+						<p id="resultInteratrialSeptumOutflowGradient"></p>
+					</div>
+				</section>
+
+				<section id="pericardial_effusion_result">
+					<h2>Перикардиальный выпот</h2>
+					<div>
+						<hr>
+						<p>Перикардиальный выпот за задней стенкой в диастолу, мм</p>
+						<p id="resultPericardialEffusionValue"></p>
+					</div>
+				</section>
+
+				<section id="additional_features_result">
+					<h2>Дополнительные особенности ЭХОКГ</h2>
+					<section>
+						<h3>Снижение диастолической функции методом допплерографии</h3>
+						<div>
+							<hr>
+							<p>Е, м/с</p>
+							<p id="resultEarlyDiastolicFillingVelocity"></p>
+						</div>
+						<div>
+							<hr>
+							<p>A, м/с</p>
+							<p id="resultLateDiastolicFillingVelocity"></p>
+						</div>
+						<div>
+							<hr>
+							<p>E/A</p>
+							<p id="resultEarlyToLateFillingVelocityRatio"></p>
+						</div>
+						<div>
+							<hr>
+							<p>DT, мс</p>
+							<p id="resultDecelerationTime"></p>
+						</div>
+						<div>
+							<hr>
+							<p>e</p>
+							<p id="resultEarlyDiastolicMovementVelocity"></p>
+						</div>
+						<div>
+							<hr>
+							<p>E/e</p>
+							<p id="resultEarlyDiastolicFillingVelocityToMovementRatio"></p>
+						</div>
+					</section>
+					<section>
+						<h3>Сегментарное нарушение сократимости стенок левого желудочка</h3>
+						<div>
+							<hr>
+							<p>Состояние</p>
+							<p id="resultSegmentalViolationContraction"></p>
+						</div>
+						<div>
+							<hr>
+							<p>Дополнительные хорды в левом желудочке</p>
+							<p id="resultAdditionalChords"></p>
+						</div>
+					</section>
+				</section>
+
+				<section id="conclusion_result">
+					<hr>
+					<div >
+						<h2>Заключение</h2>
+						<p id='conclusion' style="display: block;"></p>
+					</div>
+				</section>
+
+			</div>
+		
+	</div>
+
+<script type="text/javascript" src="main.js"></script>
+</body>
+</html>
